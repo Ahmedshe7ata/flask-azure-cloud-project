@@ -1,0 +1,38 @@
+ ssh -i D:\Cloud Engineering\AZ-project\cloud-project-key.pem azureuser@172.205.169.105
+ ssh -i "D:\Cloud Engineering\AZ-project\vm-app-2_key.pem" azureuser@20.8.171.1
+
+
+//commands for vm1 
+
+    1  sudo apt update
+    2  sudo apt upgrade -y
+    3  sudo apt install docker.io -y
+    4  sudo systemctl start docker
+    5  sudo systemctl enable  docker
+    6  docker version
+    8  git clone https://github.com/rutvik-max/flask-devops-demo.git
+    9  cd flask-devops-demo
+   10  sudo docker build -t flask-app .
+   12  sudo docker run -d -p 80:5000 flask-app
+   13  vim app.py
+   19  sudo docker ps -a
+   22  vim app.py
+   23  sudo docker ps -a
+   26  curl http://localhost:80
+ 
+//commands for vm2
+
+    1  sudo apt update
+    2  sudo apt install docker.io -y
+    3  sudo systemctl start docker
+    4  sudo systemctl enable docker
+    5  git clone https://github.com/rutvik-max/flask-devops-demo.git
+    6  cd flask-devops-demo
+    7  vim app.py
+   12  sudo docker ps -a
+   14  git clone https://github.com/rutvik-max/flask-devops-demo.git
+   16  sudo docker build -t flask-app .
+   17  sudo docker run -d -p 80:5000 flask-app
+   18  curl http://localhost:80
+   
+
